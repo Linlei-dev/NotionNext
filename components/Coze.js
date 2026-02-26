@@ -13,6 +13,7 @@ export default function Coze() {
   )
   const title = siteConfig('COZE_TITLE', 'NotionNext助手')
   const botId = siteConfig('COZE_BOT_ID')
+  const token = siteConfig('COZE_TOKEN')
 
   const loadCoze = async () => {
     await loadExternalResource(cozeSrc)
@@ -20,10 +21,16 @@ export default function Coze() {
     if (CozeWebSDK) {
       const cozeClient = new CozeWebSDK.WebChatClient({
         config: {
-          bot_id: botId
+          bot_id: botId,
+          type: 'bot'
         },
         componentProps: {
           title: title
+        } ,
+        auth: {
+          type: 'token',
+          token: token,
+          onRefreshToken: async () => 'token'
         }
       })
       console.log('coze', cozeClient)
