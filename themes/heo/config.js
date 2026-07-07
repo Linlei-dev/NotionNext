@@ -37,6 +37,7 @@ const CONFIG = {
   HEO_HERO_RECOMMEND_POST_TAG: '',
   HEO_HERO_RECOMMEND_POST_SORT_BY_UPDATE_TIME: true, // 推荐文章排序，为`true`时将强制按最后修改时间倒序
   HERO_RECOMMEND_COVER: 'https://pic.imgdb.cn/item/65674c6cc458853aef5b7b1b.png',// 英雄区右侧图片
+  HEO_HERO_RECOMMEND_COVER_ENABLE: false, // Whether to show the recommend cover overlay before clicking
 
   // 右侧个人资料卡牌欢迎语，点击可自动切换
   HEO_INFOCARD_GREETINGS: [
